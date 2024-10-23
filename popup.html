@@ -1,0 +1,88 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Security Browser Plugin</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .tooltip {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      color: #007bff;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 220px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%; /* Position above the tooltip text */
+      left: 50%;
+      margin-left: -110px; /* Center the tooltip */
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Security Report</h1>
+  
+  <div class="section">
+    <h2>Conexões de Terceiros</h2>
+    <ul id="third-party-connections">
+      <li>Carregando...</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Ameaças Detectadas</h2>
+    <ul id="threats">
+      <li>Carregando...</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Armazenamento Local</h2>
+    <ul id="storage-data">
+      <li>Carregando...</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Cookies</h2>
+    <ul id="cookies">
+      <li>Carregando...</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Pontuação de Privacidade <span class="tooltip">?
+        <span class="tooltiptext">A pontuação varia de 0 a 10, onde cada critério atendido aumenta a pontuação. Os critérios incluem política de privacidade, consentimento do usuário, transparência de dados, opções de exclusão e segurança de dados.</span>
+      </span>
+    </h2>
+    <div id="privacy-score">Carregando...</div>
+  </div>
+
+  <!-- Seção para exibir a Fingerprint -->
+  <div class="section">
+    <h2>Fingerprint</h2>
+    <div id="fingerprint">Carregando...</div>
+  </div>
+
+  <button id="clear-data">Limpar Dados</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>
